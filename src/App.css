@@ -1,0 +1,70 @@
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--bg-scroll);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--bg-scroll-hover);
+}
+
+pre {
+  filter: var(--filter);
+}
+
+.bg-pattern {
+  background-size: 20px 20px;
+  background-color: transparent;
+  background-image: linear-gradient(#2196f3 1px, transparent 1px), linear-gradient(to right, #2196f3 1px, transparent 1px);
+}
+
+.nav-on {
+  @apply fixed w-full backdrop-blur-md z-50 border-b-[1px] shadow-sm;
+  animation: slide-down 0.5s;
+}
+
+@keyframes slide-down {
+  from {
+    top: -100%;
+  }
+
+  to {
+    top: 0;
+  }
+}
+
+@keyframes move-right {
+  from {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes move-left {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.move-right {
+  animation: move-right 10s infinite linear;
+}
+
+.move-left {
+  animation: move-left 10s infinite linear;
+}
