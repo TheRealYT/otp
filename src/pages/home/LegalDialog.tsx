@@ -32,7 +32,7 @@ export default function LegalDialog({ppHash = '#pp', tosHash = '#tos'}) {
                 }
 
                 <DialogFooter>
-                    <Button onClick={() => setOpen(false)}>OK</Button>
+                    <Button onClick={() => (setOpen(false), handleClose())}>OK</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>
