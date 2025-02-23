@@ -16,6 +16,12 @@ export const loginUser = async (credentials: object) => {
         .then(({data}) => data);
 };
 
+export const reqDev = async (data: object) => {
+    return axios
+        .post(`${BACKEND_URL}/users/request`, data)
+        .then(({data}) => data);
+};
+
 export const updateProfile = async (userData: object) => {
     return axios
         .patch(`${BACKEND_URL}/users/update`, userData, {

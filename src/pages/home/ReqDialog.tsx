@@ -9,7 +9,7 @@ import {z} from 'zod';
 import {zodResolver} from '@hookform/resolvers/zod';
 import {WithCheckIcon} from '@/ui/WithCheckIcon.tsx';
 import {useMutation} from '@tanstack/react-query';
-import {loginUser} from '@/lib/api.ts';
+import {reqDev} from '@/lib/api.ts';
 import {handleErrorResponse} from '@/lib/error.ts';
 import {Form, FormControl, FormField, FormItem, FormLabel, FormMessage} from '@/components/ui/form.tsx';
 import {Textarea} from '@/components/ui/textarea.tsx';
@@ -80,7 +80,7 @@ function ReqForm({onDone, canClose}: ReqFormProps) {
     }
 
     const mutation = useMutation({
-        mutationFn: loginUser,
+        mutationFn: reqDev,
         onSuccess: () => {
             form.reset();
             showToast();
