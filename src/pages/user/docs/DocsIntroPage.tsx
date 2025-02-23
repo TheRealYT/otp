@@ -38,7 +38,7 @@ export default function DocsIntroPage() {
                     <a href={BOT_LINK} target="_blank">{BOT_LINK}</a>
                 </Button>
 
-                <Highlight value={<div className="text-sm py-2">Bot username: @<b>{BOT_USERNAME}</b></div>}/>
+                <Highlight value={<span className="text-sm py-2">Bot username: @<b>{BOT_USERNAME}</b></span>}/>
             </p>
 
             <br/>

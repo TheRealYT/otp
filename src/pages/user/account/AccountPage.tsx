@@ -34,8 +34,8 @@ export default function AccountPage() {
     const [activeRoute, setActiveRoute] = useState('');
 
     return (
-        <section className="flex flex-1 gap-x-8 p-4 pt-0">
-            <div className="flex flex-col gap-y-2 w-64">
+        <section className="flex max-md:flex-col flex-1 gap-x-8 p-4 pt-0">
+            <div className="flex max-md:flex-row max-md:mb-4 flex-col gap-2 max-ld:w-32 w-64">
                 {
                     pages.map(p => (
                         <Button key={p.name} variant="ghost"
