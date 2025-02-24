@@ -50,7 +50,7 @@ function SignupForm() {
         toast({
             variant: 'success',
             title: <WithCheckIcon text="Successfully registered!"/>,
-            description: 'Now, you can login.',
+            description: 'Check your inbox for email verification link.',
         });
     }
 

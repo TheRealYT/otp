@@ -15,6 +15,7 @@ import ApiKeysPage from '@/pages/user/ApiKeysPage.tsx';
 import ForgotPage from '@/pages/ForgotPage.tsx';
 import ResetPage from '@/pages/ResetPage.tsx';
 import DocsPage from '@/pages/user/docs/DocsPage.tsx';
+import VerifyPage from '@/pages/VerifyPage.tsx';
 
 const queryClient = new QueryClient();
 
@@ -44,6 +45,10 @@ export default function App() {
 
                         <Route path="/reset/:token" element={<PreLoginLayout redirect={false}/>}>
                             <Route index element={<ResetPage/>}/>
+                        </Route>
+
+                        <Route path="/verify/:token" element={<PreLoginLayout redirect={false}/>}>
+                            <Route index element={<VerifyPage/>}/>
                         </Route>
 
                         <Route path="/user" element={<UserLayout/>}>

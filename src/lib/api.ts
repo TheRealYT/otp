@@ -56,6 +56,12 @@ export const linkAccess = async (token: string) => {
         .then(({data}) => data);
 };
 
+export const linkVerify = async (token: string) => {
+    return axios
+        .post(`${BACKEND_URL}/auth/verify`, {token})
+        .then(({data}) => data);
+};
+
 export const fetchKeys = async () => {
     return axios
         .get(`${BACKEND_URL}/auth/api_keys`, {
