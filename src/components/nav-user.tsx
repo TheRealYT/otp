@@ -26,39 +26,7 @@ import {
     SidebarMenuItem,
     useSidebar,
 } from '@/components/ui/sidebar';
-import {useAuthStore} from '@/store/auth.ts';
-import {useMutation} from '@tanstack/react-query';
-import {logout as apiLogout} from '@/lib/api.ts';
-import {useToast} from '@/hooks/use-toast.ts';
 import {Link} from 'react-router-dom';
-
-function Logout() {
-    const {logout} = useAuthStore();
-    const {toast} = useToast();
-
-    const {mutate} = useMutation({
-        mutationFn: apiLogout,
-        onError(error) {
-            const description = error?.response?.data?.message ?? 'Something went wrong';
-
-            toast({
-                variant: 'destructive',
-                title: 'Error',
-                description: description,
-            });
-        },
-        onSuccess() {
-            logout();
-        },
-    });
-
-    return (
-        <DropdownMenuItem onClick={() => mutate()}>
-            <LogOut/>
-            Log out
-        </DropdownMenuItem>
-    );
-}
 
 export function NavUser({
                             user,
@@ -120,7 +88,12 @@ export function NavUser({
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator/>
-                        <Logout/>
+                        <DropdownMenuItem asChild>
+                            <Link to="#logout">
+                                <LogOut/>
+                                Log out
+                            </Link>
+                        </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>
             </SidebarMenuItem>

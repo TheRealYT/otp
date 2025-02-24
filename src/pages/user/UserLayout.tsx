@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {AppSidebar} from '@/components/app-sidebar';
 import {
     Breadcrumb,
@@ -16,8 +16,8 @@ import {
 } from '@/components/ui/sidebar';
 import {Navigate, Outlet} from 'react-router-dom';
 import {useAuthStore} from '@/store/auth.ts';
-import {useState} from 'react';
 import {SimpleToggle} from '@/components/simple-toggle.tsx';
+import LogoutDialog from '@/pages/user/LogoutDialog.tsx';
 
 export default function UserLayout() {
     const {user} = useAuthStore();
@@ -69,6 +69,7 @@ export default function UserLayout() {
                     </div>
                 </header>
 
+                <LogoutDialog/>
                 <Outlet context={{setTitle, setBreadcrumbs, user}}/>
             </SidebarInset>
         </SidebarProvider>

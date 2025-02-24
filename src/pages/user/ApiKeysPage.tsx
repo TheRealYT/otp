@@ -20,7 +20,7 @@ import {fetchKeys, genKey, revokeKey} from '@/lib/api.ts';
 import {Ellipsis, ListOrdered, Loader2, RefreshCcw} from 'lucide-react';
 import {Button} from '@/components/ui/button.tsx';
 import {useToast} from '@/hooks/use-toast.ts';
-import {useState} from 'react';
+import React, {useState} from 'react';
 import CopyButton from '@/pages/user/CopyButton.tsx';
 
 import {getErrorMessage} from '@/lib/error.ts';
@@ -103,6 +103,7 @@ function Actions({apiKey}: { apiKey: string }) {
                 <AlertDialogFooter>
                     <AlertDialogCancel disabled={isPending}>Cancel</AlertDialogCancel>
                     <Button onClick={() => mutate(apiKey)} variant="destructive" disabled={isPending}>
+                        {isPending && <Loader2 className="animate-spin"/>}
                         Continue
                     </Button>
                 </AlertDialogFooter>
