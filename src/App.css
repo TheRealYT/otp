@@ -18,6 +18,7 @@
 
 pre {
   filter: var(--filter);
+  @apply text-sm;
 }
 
 .bg-pattern {

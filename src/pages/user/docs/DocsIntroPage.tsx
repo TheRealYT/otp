@@ -11,7 +11,7 @@ export default function DocsIntroPage() {
     useHeader('', ['Docs', 'Introduction']);
 
     return (
-        <section className="flex flex-1 flex-col gap-4 p-4 pt-0">
+        <div className="flex flex-1 flex-col gap-4">
             <h1 className="inline-flex items-center gap-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                 OTP API Documentation Introduction
             </h1>
@@ -67,6 +67,6 @@ export default function DocsIntroPage() {
                     <Link to="../docs/errors"><ArrowRightCircle/> Checkout Error Responses</Link>
                 </Button>
             </div>
-        </section>
+        </div>
     );
 }

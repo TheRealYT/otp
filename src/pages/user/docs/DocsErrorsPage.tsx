@@ -21,7 +21,7 @@ export default function DocsErrorsPage() {
     });
 
     return (
-        <section className="flex flex-1 flex-col gap-4 p-4 pt-0">
+        <div className="flex flex-1 flex-col gap-4">
             <h1 className="inline-flex items-center gap-2 scroll-m-20 text-2xl font-semibold tracking-tight">
                 Error Response
             </h1>
@@ -75,6 +75,6 @@ export default function DocsErrorsPage() {
                                                                        size="icon"><RefreshCcw/></Button></> : 'No data'}
                 </div>
             }
-        </section>
+        </div>
     );
 }

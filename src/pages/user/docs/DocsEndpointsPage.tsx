@@ -15,9 +15,10 @@ export default function DocsEndpointsPage() {
         refetchOnWindowFocus: false,
     });
 
-    return <section className="flex flex-col flex-1 gap-4 p-4 pt-0">
+    return <div className="flex flex-col flex-1 gap-4">
         {!isFetching && data ? (data.endpoints as Endpoint[]).map(pt => (
-            <ApiDoc error={pt.error} baseUrl={data.baseUrl} key={pt.name} name={pt.name} path={pt.path} req={pt.req}
+            <ApiDoc error={pt.error} baseUrl={data.baseUrl + (data.baseUrl.endsWith('/') ? '' : '/')} key={pt.name}
+                    name={pt.name} path={pt.path} req={pt.req}
                     res={pt.res}
                     method={pt.method}
                     detail={pt.detail} code={pt.code}/>
@@ -29,5 +30,5 @@ export default function DocsEndpointsPage() {
                                                                size="icon"><RefreshCcw/></Button></> : 'No data'}
         </div>
         }
-    </section>;
+    </div>;
 }
