@@ -34,23 +34,23 @@ export default function App() {
                         </Route>
 
                         <Route path="/signup" element={<PreLoginLayout/>}>
-                            <Route index element={<Page title="Signup" page={<SignupPage/>}/>}/>
+                            <Route index element={<Page title="Signup - Verify" page={<SignupPage/>}/>}/>
                         </Route>
 
                         <Route path="/login" element={<PreLoginLayout/>}>
-                            <Route index element={<Page title="Login" page={<LoginPage/>}/>}/>
+                            <Route index element={<Page title="Login - Verify" page={<LoginPage/>}/>}/>
                         </Route>
 
                         <Route path="/forgot" element={<PreLoginLayout/>}>
-                            <Route index element={<Page title="Forgot Password" page={<ForgotPage/>}/>}/>
+                            <Route index element={<Page title="Forgot Password - Verify" page={<ForgotPage/>}/>}/>
                         </Route>
 
                         <Route path="/reset/:token" element={<PreLoginLayout redirect={false}/>}>
-                            <Route index element={<Page title="Reset Password" page={<ResetPage/>}/>}/>
+                            <Route index element={<Page title="Reset Password - Verify" page={<ResetPage/>}/>}/>
                         </Route>
 
                         <Route path="/verify/:token" element={<PreLoginLayout redirect={false}/>}>
-                            <Route index element={<Page title="Verify Link" page={<VerifyPage/>}/>}/>
+                            <Route index element={<Page title="Verify Link - Verify" page={<VerifyPage/>}/>}/>
                         </Route>
 
                         <Route path="/user" element={<UserLayout/>}>
