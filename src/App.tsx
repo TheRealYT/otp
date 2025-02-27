@@ -1,5 +1,5 @@
 import '@/App.css';
-import {QueryClientProvider, QueryClient} from '@tanstack/react-query';
+import {QueryClient, QueryClientProvider} from '@tanstack/react-query';
 import {BrowserRouter, Route, Routes} from 'react-router-dom';
 import {Toaster} from '@/components/ui/toaster.tsx';
 import {ThemeProvider} from '@/components/theme-provider';
@@ -16,6 +16,7 @@ import ForgotPage from '@/pages/ForgotPage.tsx';
 import ResetPage from '@/pages/ResetPage.tsx';
 import DocsPage from '@/pages/user/docs/DocsPage.tsx';
 import VerifyPage from '@/pages/VerifyPage.tsx';
+import Page from '@/ui/Page.tsx';
 
 const queryClient = new QueryClient();
 
@@ -28,33 +29,34 @@ export default function App() {
 
                     <Routes>
                         <Route path="/" element={<DefaultLayout/>}>
-                            <Route index element={<HomePage/>}/>
+                            <Route index element={<Page title="Verify – Effortless & Secure Phone Verification"
+                                                        page={<HomePage/>}/>}/>
                         </Route>
 
                         <Route path="/signup" element={<PreLoginLayout/>}>
-                            <Route index element={<SignupPage/>}/>
+                            <Route index element={<Page title="Signup" page={<SignupPage/>}/>}/>
                         </Route>
 
                         <Route path="/login" element={<PreLoginLayout/>}>
-                            <Route index element={<LoginPage/>}/>
+                            <Route index element={<Page title="Login" page={<LoginPage/>}/>}/>
                         </Route>
 
                         <Route path="/forgot" element={<PreLoginLayout/>}>
-                            <Route index element={<ForgotPage/>}/>
+                            <Route index element={<Page title="Forgot Password" page={<ForgotPage/>}/>}/>
                         </Route>
 
                         <Route path="/reset/:token" element={<PreLoginLayout redirect={false}/>}>
-                            <Route index element={<ResetPage/>}/>
+                            <Route index element={<Page title="Reset Password" page={<ResetPage/>}/>}/>
                         </Route>
 
                         <Route path="/verify/:token" element={<PreLoginLayout redirect={false}/>}>
-                            <Route index element={<VerifyPage/>}/>
+                            <Route index element={<Page title="Verify Link" page={<VerifyPage/>}/>}/>
                         </Route>
 
                         <Route path="/user" element={<UserLayout/>}>
                             <Route index element={<Dashboard/>}/>
                             <Route path="account/*" element={<AccountPage/>}/>
-                            <Route path="keys" element={<ApiKeysPage/>}/>
+                            <Route path="keys" element={<Page title="API Keys" page={<ApiKeysPage/>}/>}/>
                             <Route path="docs/*" element={<DocsPage/>}/>
                             <Route path="*" element="404"/>
                         </Route>

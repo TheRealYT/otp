@@ -1,8 +1,8 @@
-import {useOutletContext} from 'react-router-dom';
-import {useEffect} from 'react';
+import {useContext, useEffect} from 'react';
+import {Context} from '@/pages/user/Context.tsx';
 
 export const useHeader = (title: string = '', breadcrumbs: string[] = []) => {
-    const {setTitle, setBreadcrumbs} = useOutletContext();
+    const {setTitle, setBreadcrumbs} = useContext(Context);
 
     useEffect(() => {
         setTitle(title);

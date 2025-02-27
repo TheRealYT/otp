@@ -3,16 +3,17 @@ import {SecuritySettings} from '@/pages/user/account/SecuritySettings.tsx';
 import {Link, Route, Routes, useLocation} from 'react-router-dom';
 import {Button} from '@/components/ui/button.tsx';
 import {ReactNode, useEffect, useState} from 'react';
+import Page from '@/ui/Page.tsx';
 
 const pages: ({ link?: string; text?: string; name: string; page: ReactNode })[] = [
     {
         link: '',
         name: 'general',
-        page: <GeneralSettings/>,
+        page: <Page title="General Settings - Account" page={<GeneralSettings/>}/>,
     },
     {
         name: 'security',
-        page: <SecuritySettings/>,
+        page: <Page title="Security Settings - Account" page={<SecuritySettings/>}/>,
     },
 ];
 
