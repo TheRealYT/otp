@@ -1,7 +1,9 @@
 import {useState, useEffect, ReactNode} from 'react';
+import {cn} from '@/lib/utils.ts';
 
-export default function InfiniteScrolling({items, time, visibleItems, reverse = false}: {
+export default function InfiniteScrolling({items, className, time, visibleItems, reverse = false}: {
     items: ReactNode[],
+    className?: string,
     time: string,
     visibleItems: number | ((items: number) => number)
     reverse?: boolean
@@ -27,7 +29,7 @@ export default function InfiniteScrolling({items, time, visibleItems, reverse = 
         <div className="overflow-hidden relative">
             <div
                 style={{animationDuration: time}}
-                className={'flex w-max hover:paused ' + (reverse ? 'move-left' : 'move-right')}>
+                className={cn('infinite-scroller flex w-max', reverse ? 'move-left' : 'move-right', className)}>
 
                 {items.map((item, index) => (
                     <div
