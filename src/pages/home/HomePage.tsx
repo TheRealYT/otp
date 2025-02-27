@@ -97,7 +97,7 @@ export default function HomePage() {
                 </motion.div>
 
                 <div className="-z-10 backdrop-blur-[100px] absolute left-0 top-0 w-full h-full"/>
-                <div className="-z-10 grid grid-cols-12 absolute top-0 left-0 size-full opacity-10 bg-pattern"/>
+                <div className="-z-10 grid grid-cols-12 absolute top-0 left-0 size-full opacity-50 dark:opacity-10 bg-pattern"/>
                 <div className="-z-10 backdrop-blur-[4px] absolute left-0 top-0 w-full h-full"/>
                 <div className="-z-20 absolute size-64 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"/>
             </section>
