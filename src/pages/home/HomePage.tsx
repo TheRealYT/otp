@@ -25,6 +25,9 @@ export default function HomePage() {
         if (location.hash)
             lastHash.current = location.hash.slice(1);
 
+        if (lastHash.current == '')
+            return;
+
         const elem = document.getElementById(lastHash.current);
         if (lastHash.current && elem) {
             setTimeout(() => {
