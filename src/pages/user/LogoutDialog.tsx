@@ -61,9 +61,9 @@ export default function LogoutDialog({hash = '#logout'}) {
         }}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogTitle>Are you sure to logout?</AlertDialogTitle>
                     <AlertDialogDescription>
-                        You will need to login again to access your account.
+                        You will be required to login again to access your account.
                     </AlertDialogDescription>
                 </AlertDialogHeader>
                 <AlertDialogFooter>

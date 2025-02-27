@@ -20,7 +20,7 @@ import {fetchKeys, genKey, revokeKey} from '@/lib/api.ts';
 import {Ellipsis, ListOrdered, Loader2, RefreshCcw} from 'lucide-react';
 import {Button} from '@/components/ui/button.tsx';
 import {useToast} from '@/hooks/use-toast.ts';
-import React, {useState} from 'react';
+import {useState} from 'react';
 import CopyButton from '@/pages/user/CopyButton.tsx';
 
 import {getErrorMessage} from '@/lib/error.ts';
@@ -95,7 +95,7 @@ function Actions({apiKey}: { apiKey: string }) {
         <AlertDialog open={open} onOpenChange={(o) => !isPending && setOpen(o)}>
             <AlertDialogContent>
                 <AlertDialogHeader>
-                    <AlertDialogTitle>Are you absolutely sure?</AlertDialogTitle>
+                    <AlertDialogTitle>Are you sure to delete?</AlertDialogTitle>
                     <AlertDialogDescription>
                         This action cannot be undone. This will permanently delete the api key.
                     </AlertDialogDescription>
