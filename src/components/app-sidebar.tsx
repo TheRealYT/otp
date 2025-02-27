@@ -28,7 +28,7 @@ const data = {
     navMain: [
         {
             title: 'API',
-            url: '#',
+            url: 'keys',
             icon: SquareTerminal,
             isActive: true,
             items: [
@@ -40,12 +40,12 @@ const data = {
         },
         {
             title: 'Documentation',
-            url: '#',
+            url: 'docs',
             icon: BookOpen,
             items: [
                 {
                     title: 'Introduction',
-                    url: 'docs/intro',
+                    url: 'docs',
                 },
                 {
                     title: 'Errors',

@@ -15,7 +15,7 @@ import {
     SidebarMenuItem,
     SidebarMenuSub,
     SidebarMenuSubButton,
-    SidebarMenuSubItem,
+    SidebarMenuSubItem, useSidebar,
 } from '@/components/ui/sidebar';
 import {Link} from 'react-router-dom';
 
@@ -33,9 +33,11 @@ export function NavMain({
         }[]
     }[]
 }) {
+    const {open} = useSidebar();
+
     return (
         <SidebarGroup>
-            <SidebarGroupLabel>Platform</SidebarGroupLabel>
+            <SidebarGroupLabel>Verify API</SidebarGroupLabel>
             <SidebarMenu>
                 {items.map((item) => (
                     <Collapsible
@@ -46,12 +48,22 @@ export function NavMain({
                     >
                         <SidebarMenuItem>
                             <CollapsibleTrigger asChild>
-                                <SidebarMenuButton tooltip={item.title}>
-                                    {item.icon && <item.icon/>}
-                                    <span>{item.title}</span>
-                                    <ChevronRight
-                                        className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"/>
-                                </SidebarMenuButton>
+                                {
+                                    !open && item.url ?
+                                        <SidebarMenuButton tooltip={item.title} asChild>
+                                            <Link to={item.url}>
+                                                {item.icon && <item.icon/>}
+                                                <span>{item.title}</span>
+                                            </Link>
+                                        </SidebarMenuButton>
+                                        :
+                                        <SidebarMenuButton tooltip={item.title}>
+                                            {item.icon && <item.icon/>}
+                                            <span>{item.title}</span>
+                                            <ChevronRight
+                                                className="ml-auto transition-transform duration-200 group-data-[state=open]/collapsible:rotate-90"/>
+                                        </SidebarMenuButton>
+                                }
                             </CollapsibleTrigger>
                             <CollapsibleContent>
                                 <SidebarMenuSub>
