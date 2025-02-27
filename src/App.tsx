@@ -17,6 +17,7 @@ import ResetPage from '@/pages/ResetPage.tsx';
 import DocsPage from '@/pages/user/docs/DocsPage.tsx';
 import VerifyPage from '@/pages/VerifyPage.tsx';
 import Page from '@/ui/Page.tsx';
+import NotFoundPage from '@/ui/NotFoundPage.tsx';
 
 const queryClient = new QueryClient();
 
@@ -58,10 +59,12 @@ export default function App() {
                             <Route path="account/*" element={<AccountPage/>}/>
                             <Route path="keys" element={<Page title="API Keys" page={<ApiKeysPage/>}/>}/>
                             <Route path="docs/*" element={<DocsPage/>}/>
-                            <Route path="*" element="404"/>
+                            <Route path="*" element={<NotFoundPage/>}/>
                         </Route>
 
-                        <Route path="*" element="404"/>
+                        <Route path="*" element={<PreLoginLayout redirect={false}/>}>
+                            <Route path="*" element={<NotFoundPage/>}/>
+                        </Route>
                     </Routes>
                 </BrowserRouter>
             </QueryClientProvider>

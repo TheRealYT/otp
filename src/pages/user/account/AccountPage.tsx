@@ -4,6 +4,7 @@ import {Link, Route, Routes, useLocation} from 'react-router-dom';
 import {Button} from '@/components/ui/button.tsx';
 import {ReactNode, useEffect, useState} from 'react';
 import Page from '@/ui/Page.tsx';
+import NotFoundPage from '@/ui/NotFoundPage.tsx';
 
 const pages: ({ link?: string; text?: string; name: string; page: ReactNode })[] = [
     {
@@ -57,6 +58,8 @@ export default function AccountPage() {
                                                       children={p.page}/>}/>
                     ))
                 }
+
+                <Route path="*" element={<NotFoundPage/>}/>
             </Routes>
         </section>
     );
