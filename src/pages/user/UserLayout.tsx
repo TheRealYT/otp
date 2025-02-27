@@ -9,23 +9,22 @@ import {
     BreadcrumbSeparator,
 } from '@/components/ui/breadcrumb';
 import {Separator} from '@/components/ui/separator';
-import {
-    SidebarInset,
-    SidebarProvider,
-    SidebarTrigger,
-} from '@/components/ui/sidebar';
+import {SidebarInset, SidebarProvider, SidebarTrigger} from '@/components/ui/sidebar';
 import {Navigate, Outlet} from 'react-router-dom';
 import {useAuthStore} from '@/store/auth.ts';
 import {SimpleToggle} from '@/components/simple-toggle.tsx';
 import LogoutDialog from '@/pages/user/LogoutDialog.tsx';
+import {Context} from '@/pages/user/Context.tsx';
 
 export default function UserLayout() {
     const {user} = useAuthStore();
-    const [breadcrumbs, setBreadcrumbs] = useState([]);
+    const [breadcrumbs, setBreadcrumbs] = useState([] as string[]);
     const [title, setTitle] = useState('');
 
     if (!user)
         return <Navigate to="/login"/>;
+
+    const context = {setTitle, setBreadcrumbs, user};
 
     return (
         <SidebarProvider>
@@ -70,7 +69,9 @@ export default function UserLayout() {
                 </header>
 
                 <LogoutDialog/>
-                <Outlet context={{setTitle, setBreadcrumbs, user}}/>
+                <Context.Provider value={context}>
+                    <Outlet/>
+                </Context.Provider>
             </SidebarInset>
         </SidebarProvider>
     );

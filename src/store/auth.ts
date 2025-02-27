@@ -1,6 +1,6 @@
 import {create} from 'zustand';
 
-type UserObject = { name: string, email: string, website: string };
+export type UserObject = { name: string, email: string, website: string };
 
 interface UserState {
     user: UserObject | null;
