@@ -33,12 +33,11 @@ const items = testimonials.map(t => (
 const visibleItems = (w: number) => w / 400;
 
 function Shadow() {
-    // TODO: user var(--background)
     return <>
         <div
-            className="z-10 absolute left-0 top-0 h-full w-64 bg-gradient-to-r from-white dark:from-black to-transparent"/>
+            className="z-10 absolute left-0 top-0 h-full w-1/3 bg-gradient-to-r from-white dark:from-[hsl(var(--background))] to-transparent"/>
         <div
-            className="z-10 absolute right-0 top-0 h-full w-64 bg-gradient-to-r from-transparent to-white dark:to-black"/>
+            className="z-10 absolute right-0 top-0 h-full w-1/3 bg-gradient-to-r from-transparent to-white dark:to-[hsl(var(--background))]"/>
     </>;
 }
 
