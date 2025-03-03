@@ -12,7 +12,6 @@ import {Link, useNavigate} from 'react-router-dom';
 import {useToast} from '@/hooks/use-toast.ts';
 import {WithCheckIcon} from '@/ui/WithCheckIcon.tsx';
 import {handleErrorResponse} from '@/lib/error.ts';
-import React from 'react';
 
 export default function SignupPage() {
     return <section className="">
