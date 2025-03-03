@@ -1,4 +1,4 @@
-import {ArrowUpRight, CheckCircle2 as Logo} from 'lucide-react';
+import {ArrowUpRight} from 'lucide-react';
 import {Separator} from '@/components/ui/separator.tsx';
 import {Button} from '@/components/ui/button.tsx';
 import {FaTelegram, FaXTwitter} from 'react-icons/fa6';
@@ -30,7 +30,7 @@ export default function Footer() {
                     </h1>
 
                     <div className="flex items-center gap-x-2">
-                        <Logo className="size-9 text-blue-700 fill-green-500"/>
+                        <img src="/logo.svg" className="size-6" alt="Verify Logo"/>
                         <p
                             className="font-bold text-2xl bg-gradient-to-r from-green-500 to-blue-500 bg-clip-text text-transparent">
                             {COMPANY}
