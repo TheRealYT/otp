@@ -26,6 +26,7 @@ import {
 import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert.tsx';
 import {FaTelegram} from 'react-icons/fa6';
 import {useToast} from '@/hooks/use-toast.ts';
+import {useAuthStore} from '@/store/auth.ts';
 
 export function SecuritySettings() {
     useHeader('', ['Account', 'Security']);
@@ -84,6 +85,7 @@ const FormSchema = z.object({
 
 function ChangePasswordForm() {
     const {toast} = useToast();
+    const {user} = useAuthStore();
 
     const showToast = () => {
         toast({
@@ -115,6 +117,8 @@ function ChangePasswordForm() {
         <Form {...form}>
             <form onSubmit={form.handleSubmit((data) => mutation.mutate(data.password))}
                   className="space-y-3 flex flex-col items-start">
+
+                <input type="email" autoComplete="username" value={user?.email} hidden disabled/>
 
                 <FormField
                     control={form.control}
