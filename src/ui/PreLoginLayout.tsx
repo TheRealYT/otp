@@ -16,11 +16,11 @@ export default function PreLoginLayout({redirect = true}) {
         <header>
             <ActionNav/>
         </header>
-        <main>
+        <main className="min-h-[calc(100vh-13rem)]">
             <Outlet/>
         </main>
 
-        <footer className="border-t mt-12 px-24 py-6">
+        <footer className="border-t mt-12 max-md:px-6 px-24 py-6 bg-background">
             <div className="max-md:flex-col-reverse max-md:gap-y-6 flex items-center justify-between">
                 <p>&copy; {COMPANY}</p>
 
