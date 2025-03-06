@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom';
 const prices = [
     {
         title: 'Basic',
-        btn: 'Sign Up',
+        btn: 'Sign Up Free',
         url: '/signup',
         features: [
             'Unlimited Requests',
