@@ -61,7 +61,8 @@ export default function TestimonySection() {
 
                 <div className="-z-10 backdrop-blur-[4px] absolute size-full left-0 top-0"/>
                 <div className="-z-20 bg-pattern opacity-10 absolute size-full left-0 top-0"/>
-                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="60s" reverse={true}/>
+                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="60s"
+                                   reverse={true}/>
             </div>
         </section>
     );
