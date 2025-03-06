@@ -2,31 +2,31 @@ import InfiniteScrolling from '@/pages/home/InfiniteScrolling.tsx';
 
 const testimonials = [
     {
-        name: 'John',
-        content: 'Lorem ipsum dolor sit amet',
+        name: 'Alex R., Startup Founder',
+        content: 'Setting up phone verification with Verify was incredibly easy. Their API worked flawlessly, and the documentation made integration smooth. Highly recommended!',
     },
     {
-        name: 'Doe',
-        content: 'Lorem ipsum dolor sit amet',
+        name: 'Maria K., SaaS Product Manager',
+        content: 'We switched to Verify for phone verification, and it has saved us a ton in SMS costs. The free API is a game-changer!',
     },
     {
-        name: 'Jane',
-        content: 'Lorem ipsum dolor sit amet',
+        name: 'Daniel T., FinTech Developer',
+        content: 'Our user verification process is now instant and secure. No more SMS delays or failed verifications. Verify just works!',
     },
     {
-        name: 'Tom',
-        content: 'Lorem ipsum dolor sit amet',
+        name: 'Emma L., CTO at SecureAuth',
+        content: 'We needed self-hosted verification, and Verify’s team handled everything. Now we have full control over our setup!',
     },
     {
-        name: 'Tim',
-        content: 'Lorem ipsum dolor sit amet',
+        name: 'James W., Lead Engineer at GrowthTech',
+        content: 'The API is super flexible and scales effortlessly. The best solution for businesses handling high verification traffic!',
     },
 ];
 
 const items = testimonials.map(t => (
-    <div className="flex flex-col justify-center items-center border h-48">
+    <div className="flex flex-col justify-center items-center text-center border h-48 gap-y-4">
+        <q className="px-4 italic">{t.content}</q>
         <p>{t.name}</p>
-        <p>{t.content}</p>
     </div>
 ));
 
@@ -53,7 +53,7 @@ export default function TestimonySection() {
 
                 <div className="-z-10 backdrop-blur-[4px] absolute size-full left-0 top-0"/>
                 <div className="-z-20 bg-pattern opacity-10 absolute size-full left-0 top-0"/>
-                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="30s"/>
+                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="60s"/>
             </div>
 
             <div className="relative group">
@@ -61,7 +61,7 @@ export default function TestimonySection() {
 
                 <div className="-z-10 backdrop-blur-[4px] absolute size-full left-0 top-0"/>
                 <div className="-z-20 bg-pattern opacity-10 absolute size-full left-0 top-0"/>
-                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="30s" reverse={true}/>
+                <InfiniteScrolling className="group-hover:paused" items={items} visibleItems={visibleItems} time="60s" reverse={true}/>
             </div>
         </section>
     );
