@@ -7,4 +7,5 @@ export type PageContext = {
     user: UserObject
 };
 
+// @ts-expect-error no initial data specified, it must be passed by provider
 export const Context = createContext<PageContext>();

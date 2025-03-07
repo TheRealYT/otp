@@ -44,6 +44,7 @@ const FormSchema = z.object({
     website: z.union([z.string().length(0, 'Invalid url'), z.string().url()]),
 }).superRefine((data, ctx) => {
     if (data.name === name && data.website === website)
+        // @ts-expect-error message will not be shown, but adding issue is important to stop submition
         ctx.addIssue({message: 'At least one field must be changed'});
 }).transform((data) => {
     // set unchanged values to undefined

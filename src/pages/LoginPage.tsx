@@ -46,6 +46,7 @@ function LoginForm() {
     function showToast() {
         toast({
             variant: 'success',
+            // @ts-expect-error overlap with dom title
             title: <WithCheckIcon text="Successfully logged in!"/>,
             description: 'Welcome back to your account.',
         });

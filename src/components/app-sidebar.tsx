@@ -16,6 +16,7 @@ import {
     SidebarRail,
 } from '@/components/ui/sidebar';
 import {Link} from 'react-router-dom';
+import {UserObject} from '@/store/auth.ts';
 
 const data = {
     teams: [
@@ -58,11 +59,10 @@ const data = {
             ],
         },
     ],
-    projects: [
-    ],
+    projects: [],
 };
 
-export function AppSidebar({user, ...props}: React.ComponentProps<typeof Sidebar>) {
+export function AppSidebar({user, ...props}: React.ComponentProps<typeof Sidebar> & { user: UserObject }) {
     return (
         <Sidebar collapsible="icon" {...props}>
             <SidebarHeader>

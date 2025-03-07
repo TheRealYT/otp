@@ -111,7 +111,15 @@ export const logout = async () => {
 
 const formatStr = 'yyyy-MM-dd';
 
-export const fetchSummary = async (date: Date, upto?: Date) => {
+export type OtpDailySummaryData = {
+    result: { pending: number; verified: number; failed: number; date: string }[]
+};
+
+type OtpSummaryData = {
+    result: { otp_status: 'verified' | 'pending' | 'failed', count: number }[]
+};
+
+export const fetchSummary = async (date: Date, upto?: Date): Promise<OtpSummaryData> => {
     return axios
         .post(`${BACKEND_URL}/otp/summary`, {
             date: format(date, formatStr),
@@ -126,7 +134,7 @@ export const fetchSummary = async (date: Date, upto?: Date) => {
         .catch(checkAuth);
 };
 
-export const fetchDailySummary = async (date: Date, upto?: Date) => {
+export const fetchDailySummary = async (date: Date, upto?: Date): Promise<OtpDailySummaryData> => {
     return axios
         .post(`${BACKEND_URL}/otp/summary/daily`, {
             date: format(date, formatStr),

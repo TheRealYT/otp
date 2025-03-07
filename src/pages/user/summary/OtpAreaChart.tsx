@@ -56,12 +56,12 @@ export default function OtpAreaChart() {
         initialData: {result: []},
         queryKey: ['otp_daily_summary'],
         queryFn: () => fetchDailySummary(date.current.from, date.current.to),
-        select: (data) => data?.result,
+        select: (data) => data.result,
         refetchOnWindowFocus: false,
     });
 
     const filteredData = useMemo(() => {
-        return chartData
+        return (chartData)
             .map(d => ({...d, total: d.pending + d.verified + d.failed}));
     }, [chartData]);
 

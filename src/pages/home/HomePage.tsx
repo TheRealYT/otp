@@ -15,7 +15,7 @@ import LegalDialog from '@/pages/home/LegalDialog.tsx';
 export default function HomePage() {
     const location = useLocation();
     const lastHash = useRef('');
-    const ref = useRef(null);
+    const ref = useRef<HTMLElement>(null);
     const scrollYProgress = useScrollProgress(ref);
     const value = useTransform(scrollYProgress, [1, 0], ['0%', '100%']);
     const margin = useTransform(scrollYProgress, [1, 0], [0, 400]);

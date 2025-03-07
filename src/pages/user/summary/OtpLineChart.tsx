@@ -8,6 +8,7 @@ import {Loader2, RefreshCcw} from 'lucide-react';
 import {Button} from '@/components/ui/button.tsx';
 
 import {getErrorMessage} from '@/lib/error.ts';
+import {OtpDailySummaryData} from '@/lib/api.ts';
 
 export default function OtpLineChart({failRate = false, title = '', info = ''}) {
     const chartConfig = {
@@ -18,7 +19,7 @@ export default function OtpLineChart({failRate = false, title = '', info = ''}) 
     } satisfies ChartConfig;
 
     const {isFetching, refetch, isError, error, data: chartData} = useQuery({
-        initialData: {result: []},
+        initialData: {result: []} as OtpDailySummaryData,
         queryKey: ['otp_daily_summary'],
         select: (data) => data?.result.map(d => {
             let sum = d.verified + d.failed;
@@ -71,7 +72,7 @@ export default function OtpLineChart({failRate = false, title = '', info = ''}) 
                                 <ChartTooltip
                                     cursor={false}
                                     content={<ChartTooltipContent hideLabel
-                                                                  formatter={a => 'Rate ' + (a * 100).toFixed(2) + '%'}/>}
+                                                                  formatter={a => 'Rate ' + ((a as number) * 100).toFixed(2) + '%'}/>}
                                 />
                                 <Line
                                     dataKey="rate"

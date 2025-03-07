@@ -1,7 +1,7 @@
-import {useCallback, useEffect} from 'react';
+import React, {useCallback, useEffect} from 'react';
 import {useMotionValue} from 'framer-motion';
 
-const useScrollProgress = (targetRef) => {
+const useScrollProgress = (targetRef: React.RefObject<HTMLElement | null>) => {
     const scrollProgress = useMotionValue(1);
 
     const handleProgress = useCallback(() => {

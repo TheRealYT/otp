@@ -35,9 +35,9 @@ const features = [
 ];
 
 export default function FeaturesSection() {
-    const elem = useRef(null);
+    const elem = useRef<HTMLDivElement>(null);
 
-    const onMouseMove = (e) => {
+    const onMouseMove = (e: MouseEvent) => {
         if (!elem.current)
             return;
 
@@ -52,7 +52,8 @@ export default function FeaturesSection() {
     }, []);
 
     return (
-        <section id='product' className="min-h-screen grid max-sm:grid-cols-1 max-md:grid-cols-2 grid-cols-3 relative gap-1 overflow-hidden p-1">
+        <section id="product"
+                 className="min-h-screen grid max-sm:grid-cols-1 max-md:grid-cols-2 grid-cols-3 relative gap-1 overflow-hidden p-1">
             <div className="-z-10 backdrop-blur-[100px] absolute left-0 top-0 size-full"/>
             <div ref={elem}
                  className="-z-20 absolute top-[calc(50%-4rem)] size-32 bg-gradient-to-r from-green-500 to-blue-500 rounded-full"/>
