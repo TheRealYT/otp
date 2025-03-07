@@ -2,7 +2,7 @@ import {AlertCircle, Loader2Icon} from 'lucide-react';
 import {useNavigate, useParams} from 'react-router-dom';
 import {useMutation} from '@tanstack/react-query';
 import {linkVerify} from '@/lib/api.ts';
-import {useEffect, useRef} from 'react';
+import {useEffect} from 'react';
 import {Alert, AlertDescription, AlertTitle} from '@/components/ui/alert.tsx';
 import {getErrorMessage} from '@/lib/error.ts';
 import {Button} from '@/components/ui/button.tsx';
@@ -10,20 +10,12 @@ import {Button} from '@/components/ui/button.tsx';
 export default function VerifyPage() {
     const navigate = useNavigate();
     const param = useParams();
-    const init = useRef(0);
 
     const {mutate, isSuccess, isPending, isError, error} = useMutation({
         mutationFn: () => linkVerify(param.token as string),
     });
 
     useEffect(() => {
-        if (init.current == 0)
-            return void (init.current = 1);
-
-        if (init.current > 1)
-            return;
-
-        init.current = 2;
         mutate();
     }, [mutate, param.token]);
 
