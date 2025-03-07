@@ -2,7 +2,7 @@ import axios from 'axios';
 import {format} from 'date-fns';
 import {checkAuth} from '@/lib/error.ts';
 
-const BACKEND_URL = 'http://localhost:3000';
+const BACKEND_URL = BACKEND_BASE_URL;
 
 export const registerUser = async (userData: object) => {
     return axios
