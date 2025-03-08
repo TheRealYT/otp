@@ -28,6 +28,8 @@ import {FaTelegram} from 'react-icons/fa6';
 import {useToast} from '@/hooks/use-toast.ts';
 import {useAuthStore} from '@/store/auth.ts';
 
+const ENABLE_2FA = false;
+
 export function SecuritySettings() {
     useHeader('', ['Account', 'Security']);
 
@@ -37,30 +39,35 @@ export function SecuritySettings() {
             <Separator className="my-4"/>
             <ChangePasswordForm/>
 
-            <h1 className="mt-8 text-lg font-medium">Two-Factor Authentication</h1>
-            <p className="text-sm text-muted-foreground">Enable or disable two-factor authentication.</p>
-            <Separator className="my-4"/>
+            {
+                ENABLE_2FA &&
+              <>
+                <h1 className="mt-8 text-lg font-medium">Two-Factor Authentication</h1>
+                <p className="text-sm text-muted-foreground">Enable or disable two-factor authentication.</p>
+                <Separator className="my-4"/>
 
-            <div className="flex flex-col">
-                <div className="flex items-center p-4 gap-x-2 border w-full rounded-t">
+                <div className="flex flex-col">
+                  <div className="flex items-center p-4 gap-x-2 border w-full rounded-t">
                     <SmartphoneIcon/>
                     <h2 className="text-lg font-medium">Authenticator App</h2>
                     <CheckCircle2Icon className="text-green-600"/>
                     <Button variant="destructive" size="sm" className="ml-auto">Disable</Button>
-                </div>
+                  </div>
 
-                <div className="flex items-center p-4 gap-x-2 border-x w-full">
+                  <div className="flex items-center p-4 gap-x-2 border-x w-full">
                     <FaTelegram className="size-6"/>
                     <h2 className="text-lg font-medium">Telegram Message</h2>
                     <Button variant="outline" size="sm" className="ml-auto">Enable</Button>
-                </div>
+                  </div>
 
-                <div className="flex items-center p-4 gap-x-2 border w-full rounded-b">
+                  <div className="flex items-center p-4 gap-x-2 border w-full rounded-b">
                     <LockIcon/>
                     <h2 className="text-lg font-medium">One Time Code</h2>
                     <Button variant="outline" size="sm" className="ml-auto">Enable</Button>
+                  </div>
                 </div>
-            </div>
+              </>
+            }
         </div>
     );
 }
