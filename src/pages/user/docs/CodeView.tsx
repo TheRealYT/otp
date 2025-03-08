@@ -5,7 +5,7 @@ import {github} from 'react-syntax-highlighter/dist/esm/styles/hljs';
 
 export default function CodeView({code}: { code: string }) {
     return (
-        <Card className="flex flex-col flex-1">
+        <Card className="w-full">
             <CardHeader className="p-6">
                 <div className="flex w-full items-center justify-between">
                     <CardTitle>Example Request</CardTitle>
@@ -19,7 +19,7 @@ export default function CodeView({code}: { code: string }) {
                             <CopyButton data={code} className="shadow-md"/>
                         </div>
 
-                        <LightSyntaxHighlighter language="bash" style={github}>
+                        <LightSyntaxHighlighter wrapLines={true} language="bash" style={github}>
                             {code}
                         </LightSyntaxHighlighter>
                     </div>

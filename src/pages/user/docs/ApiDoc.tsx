@@ -57,9 +57,7 @@ export function ApiDoc({name, method, error, path, detail, baseUrl, req, res, co
             </div>
 
             <div className="flex-1">
-                <div className="flex flex-col gap-4">
-                    <CodeView code={code}/>
-                </div>
+                <CodeView code={code}/>
             </div>
         </div>
 
