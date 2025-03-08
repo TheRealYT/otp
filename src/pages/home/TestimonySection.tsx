@@ -2,23 +2,23 @@ import InfiniteScrolling from '@/pages/home/InfiniteScrolling.tsx';
 
 const testimonials = [
     {
-        name: 'Alex R., Startup Founder',
+        name: 'Alex R.',
         content: 'Setting up phone verification with Verify was incredibly easy. Their API worked flawlessly, and the documentation made integration smooth. Highly recommended!',
     },
     {
-        name: 'Maria K., SaaS Product Manager',
+        name: 'Maria K.',
         content: 'We switched to Verify for phone verification, and it has saved us a ton in SMS costs. The free API is a game-changer!',
     },
     {
-        name: 'Daniel T., FinTech Developer',
+        name: 'Daniel T.',
         content: 'Our user verification process is now instant and secure. No more SMS delays or failed verifications. Verify just works!',
     },
     {
-        name: 'Emma L., CTO at SecureAuth',
+        name: 'Emma L.',
         content: 'We needed self-hosted verification, and Verify’s team handled everything. Now we have full control over our setup!',
     },
     {
-        name: 'James W., Lead Engineer at GrowthTech',
+        name: 'James W.',
         content: 'The API is super flexible and scales effortlessly. The best solution for businesses handling high verification traffic!',
     },
 ];
