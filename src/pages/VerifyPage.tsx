@@ -31,7 +31,7 @@ export default function VerifyPage() {
                             <Alert variant="success">
                                 <AlertCircle className="h-4 w-4"/>
                                 <AlertTitle>Email verified successfully!</AlertTitle>
-                                <AlertDescription>You can know login to your account.</AlertDescription>
+                                <AlertDescription>You can now login to your account.</AlertDescription>
                             </Alert>
 
                             <Button onClick={() => navigate('/login', {replace: true})}>Login</Button>
