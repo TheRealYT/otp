@@ -17,7 +17,7 @@ export default defineConfig(({mode, command}) => {
         return {
             ...config,
             define: {
-                BACKEND_BASE_URL: JSON.stringify('https://localhost:3000'),
+                BACKEND_BASE_URL: JSON.stringify('http://localhost:3000'),
             },
         };
 
