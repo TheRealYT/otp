@@ -30,7 +30,7 @@ export default function App() {
 
                     <Routes>
                         <Route path="/" element={<DefaultLayout/>}>
-                            <Route index element={<Page title="Verify – Effortless & Secure Phone Verification"
+                            <Route index element={<Page title="Verify – Unlimited & Free Effortless Phone Verification"
                                                         page={<HomePage/>}/>}/>
                         </Route>
 
