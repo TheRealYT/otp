@@ -18,7 +18,7 @@ export default function ForgotPage() {
     return (
         <section>
             <div className="flex flex-col items-center justify-center pb-4">
-                {sent ? <div className="flex flex-col items-center gap-y-2">
+                {sent ? <div className="flex flex-col items-center text-center gap-y-2">
                     <MailIcon className="size-16"/>
                     <p>An email with a password reset link is sent to <b>{email.current}</b>.</p>
                     <p>Check your inbox or it may be in the spam.</p>
