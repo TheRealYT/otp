@@ -64,7 +64,7 @@ export default function DocsErrorsPage() {
 
                     <div className="flex-1">
                         <Button variant="outline" asChild>
-                            <Link to="../docs/endpoints"><ArrowRightCircle/> Checkout Endpoints</Link>
+                            <Link to="../endpoints"><ArrowRightCircle/> Checkout Endpoints</Link>
                         </Button>
                     </div>
                 </> : <div
