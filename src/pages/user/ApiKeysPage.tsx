@@ -137,7 +137,8 @@ export default function ApiKeysPage() {
                     {data.length > 0 ? data.map(({token, expireDate}, i) => <TableRow key={token}>
                                 <TableCell className="font-medium">{i + 1}</TableCell>
                                 <TableCell>
-                                    {token.slice(0, token.length / 2)}...
+                                    <span className="max-sm:inline hidden">{token.slice(0, 5)}...</span>
+                                    <span className="max-sm:hidden inline">{token.slice(0, token.length / 2)}...</span>
                                     <CopyButton data={token}/>
                                 </TableCell>
                                 <TableCell>{new Date(expireDate).toUTCString()}</TableCell>
